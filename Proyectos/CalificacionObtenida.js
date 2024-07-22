@@ -1,16 +1,13 @@
 const readline = require('readline');
-
-// Configurar la interfaz de entrada/salida
+// PARA PODER VER EN CONSOLA CREA UNA INTERFAZ 
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
-// Preguntar al usuario por la calificación
 rl.question('Ingrese la calificación del alumno (0-100): ', (input) => {
     const calificacion = parseInt(input);
-
-    // Determinar la letra correspondiente a la calificación
+    
     let letra;
     if (calificacion >= 90 && calificacion <= 100) {
         letra = 'A';
@@ -23,10 +20,9 @@ rl.question('Ingrese la calificación del alumno (0-100): ', (input) => {
     } else if (calificacion >= 50 && calificacion < 60) {
         letra = 'F';
     } else {
-        letra = 'X'; // X indica que la calificación ingresada es inválida
+        letra = 'X';
     }
-
-    // Mostrar el resultado
+    
     if (letra === 'X') {
         console.log("Calificación inválida.");
     } else {
